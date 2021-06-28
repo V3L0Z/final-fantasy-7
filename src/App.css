@@ -5,6 +5,20 @@ body {
   font-family: Reactor7;
 }
 
+#button {
+  list-style-type: none;
+  color: white;
+  font-size: 35px;
+  line-height: 30px;
+  text-shadow: 2px 3px black;
+  font-family: Reactor7;
+  background: none;
+  border: 1px;
+  margin: 0;
+  padding: 0; 
+  cursor: url("FF7Cursor.webp"), auto;
+}
+
 li {
   list-style-type: none;
   color: white;

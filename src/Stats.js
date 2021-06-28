@@ -2,8 +2,9 @@ import React from 'react';
 import cloud from './cloud.jpg'
 import barrett from './barrett.jpg'
 import aeris from './aeris.jpg'
+import { connect } from 'react-redux'
 
-const Stats = () => {
+const Stats = props => {
     return (
         <div className="menu stats-menu">
             <ul>
@@ -11,10 +12,10 @@ const Stats = () => {
                     <img className="img" src={cloud} alt="" />
                     <ul id="status">
                         <li>Cloud</li>
-                        <li><span>LV</span> 10</li>
+                        <li><span>LV</span> 60</li>
                         <div id="health">
-                            <li><span>HP</span> 126/377</li>
-                            <progress value="126" max="377" id="hp"></progress>
+                            <li><span>HP</span>{props.count}/6003</li>
+                            <progress value={props.count} max="6003" id="hp"></progress>
                         </div>
                         <div id="magic">
                             <li><span>MP</span> 5/76</li>
@@ -76,4 +77,8 @@ const Stats = () => {
     )
 };
 
-export default Stats;
+const mapStateToProps = state => ({
+    count: state
+})
+
+export default connect(mapStateToProps)(Stats);
